@@ -1,73 +1,80 @@
 body{
     background: linear-gradient(to right, #002E5D, #002E5D, #2774ae);
-    color: #DBE2EF;
+    color: white;   
+    font-family: 'Basteleur-Moonlight',sans-serif;
+}
+@font-face {
+    font-family: 'Basteleur-Moonlight';
+    src: url('./webfonts/Basteleur-Moonlight.woff2') format('woff2');
+
 }
 .heading{
-    width: 1300px;
-    height:75px;
+    width: 1000px;
+    height: 90px;
+    margin: 10px auto;
     background-color: #16213E;
-    margin: 0 auto;
     border-radius: 10px;
-    align-content: center;
     display: flex;
-    padding-left: 25px;
     align-items: center;
+    padding: 0 40px;
 }
-.heading p{
-    margin-left: 5px;
+.heading h1{
+    font-size: 25px;
+    color: #DBE2EF;
 }
-.menu {
+.menu{
     display: flex;
-    gap: 125px;
-    margin-left: 125px;
+    gap: 60px;
+    margin-left: 190px;
+    margin-right: 245px;
+}
+
+.menu a{
+    font-size: 19px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color: #cccccc;
+}
+
+.profile img{
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: pointer;
+}
+/* .heading{
+    width: 1000px;
+    height: 90px;
+    margin: 0 auto;
+    background-color: #16213E;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.heading h1{
+    margin-left: 40px;
+    font-size : 25px;
+    color: #DBE2EF;
+}
+.menu{
+    display: flex;
+    gap: 115px;
+    margin-left: 100px;
 }
 .menu a{
-    color: #2EC4B6;
+    font-size: 19px;
+    color: white;
     text-decoration: none;
-    font-size: 18px;
 }
-.game-item{
-    width: 1000px;
-    background-color: #16213E;
-    margin: 20px auto;
-    border-radius: 10px;
-    padding: 20px;
-    
-}
-.game{
-    display: flex;
-    gap: 20px;
-    height: 328px;
-    background-color: #040b13;
-    border-radius: 10px;
-    margin-bottom: 40px;
-}
+.profile{
+    margin-left: 150px;
+} */
 
-.game img{
-    margin: 15px;
-    width: 200px;
-    height: 300px;
-    border-radius: 10px;
-}
-
-.tombol-wishlist{
-    width: 100px;
-    height: 30px;
-    background-color: #16213E;
-    color: #DBE2EF;
-    text-decoration: none;
-    display: flex;
-    
-}
-
-.info h2{
-    margin-top: 15px;
-    color: #DBE2EF;
-}
-.info p{
-    margin: 5px 0;
-    text-align: justify;
-}
 .cari{
     width: 500px;
     height: 40px;
