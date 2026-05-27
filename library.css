@@ -1,0 +1,55 @@
+body{
+    background: linear-gradient(to right, #002E5D, #002E5D, #2774ae);
+    color: white;   
+    font-family: 'Basteleur-Moonlight',sans-serif;
+}
+@font-face {
+    font-family: 'Basteleur-Moonlight';
+    src: url('./webfonts/Basteleur-Moonlight.woff2') format('woff2');
+
+}
+.heading{
+    width: 1000px;
+    height: 90px;
+    margin: 10px auto;
+    background-color: #16213E;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+.heading h1{
+    font-size: 25px;
+    color: #DBE2EF;
+}
+.menu{
+    display: flex;
+    gap: 60px;
+    margin-left: 190px;
+    margin-right: 245px;
+}
+
+.menu a{
+    font-size: 19px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover{
+    color: #cccccc;
+}
+
+.profile img{
+    width: 55px;
+    height: 55px;
+    border-radius: 15px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.library{
+    width: 1000px;
+    height: 100%;
+    background-color: black;
+    margin: 75px auto;
+    border-radius: 10px;
+}
