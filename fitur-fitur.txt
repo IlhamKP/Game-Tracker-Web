@@ -1,0 +1,18 @@
+Nama    : KLP 3
+Judul   : Game Tracker
+Penjelasan Singkat : Kami akan membuat website untuk menyimpan dan mengelola daftar game yang dimainkan oleh pengguna.
+Pengguna dapat menambahkan informasi seperti judul game, genre, status permainan, rating, platform, dan
+cover game agar data game lebih terorganisir.
+Nama-nama : 
+1. Ilham Khairudin Putra (13020240011)
+2. Muh. Bintang Pratama Dagga (13020240006)
+3. Andi Rahmat Fajar (13020240005)
+
+fitur-fitur :
+
+1. Sign In
+2. Sign Up
+3. Dashboard (Statistik Game, seperti Total Game,Belum dimainkan,Sedang dimainkan,Tamat dan Search bar)
+4. Daftar Game (Tambah Game (cover game,judul,genre,platform,rating), Hapus Game,Edit)
+5. Wishlist (Tambah Wishlist (cover game,judul,genre,platform) Hapus Wishlist,edit)
+6. Profile (liat profile,edit profile,logout)
