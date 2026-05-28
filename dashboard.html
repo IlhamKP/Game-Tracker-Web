@@ -20,8 +20,14 @@
             </div>
         </div>
         <div class="profile">
-            <a href="#"><img src="https://i.pinimg.com/736x/fc/7c/3b/fc7c3b11ed402d81ab8918b9a1304113.jpg" alt="logo"></a>
+            <a onclick="profile(); return false;"><img src="https://i.pinimg.com/736x/fc/7c/3b/fc7c3b11ed402d81ab8918b9a1304113.jpg" alt="logo"></a>
         </div>
+        <div class="box" id="box">
+        <div class="option">Profile</div>
+        <div class="option">Settings</div>
+        <div class="option">Logout</div>
+</div>
+        
     </div>
     <div class="dashboard">
         <div class="cari">
@@ -78,7 +84,10 @@
         }
         function tutupTG(){
             document.getElementById("overlay").style.display = "none";
-}
+        }
+        function profile(){
+            document.getElementById("box").classList.toggle("active");
+        }
     </script>
 </body>
 </html>
