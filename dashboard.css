@@ -139,5 +139,14 @@ body{
     width: 400px;
     margin-left: 11px;
 }
+.tambah-game .overlay .btn-simpan{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    margin: 0px 200px;
+
+
+}
 
 
