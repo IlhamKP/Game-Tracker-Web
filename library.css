@@ -9,14 +9,16 @@ body{
 
 }
 .heading{
-    width: 1000px;
+    width: auto;
     height: 90px;
-    margin: 10px auto;
+    margin: 10px 135px;
     background-color: #16213E;
     border-radius: 10px;
     display: flex;
     align-items: center;
     padding: 0 40px;
+    /* position: relative; */
+    justify-content: space-between;
 }
 .heading h1{
     font-size: 25px;
@@ -24,9 +26,7 @@ body{
 }
 .menu{
     display: flex;
-    gap: 60px;
-    margin-left: 190px;
-    margin-right: 245px;
+    gap: 80px;
 }
 
 .menu a{
@@ -40,16 +40,54 @@ body{
 }
 
 .profile img{
-    width: 55px;
-    height: 55px;
-    border-radius: 15px;
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
     object-fit: cover;
     cursor: pointer;
+    /* display: flex;po */
+    /* position: relative; */
 }
+
 .library{
     width: 1000px;
     height: 100%;
     background-color: black;
     margin: 75px auto;
     border-radius: 10px;
+}
+.box {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    width: 200px;
+    /* height: 10px; */
+    background: #000000;
+    border: 2px solid #ccc;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 95px;
+    right: 25px;
+}
+.box .option{
+    text-decoration: none;
+    color: #ccc;
+    width: 175px;
+    padding: 10px;
+    display: block;
+    align-items: center;
+}
+.box a:hover{
+    border-radius: 10px;
+    background-color: #2c2c2c;
+}
+.box img{
+    width: 20px;
+    height: 20px;
+}
+.box.active{
+    display: block;
 }
