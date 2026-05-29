@@ -8,41 +8,24 @@ body{
     src: url('./webfonts/Basteleur-Moonlight.woff2') format('woff2');
 
 }
-
 .heading{
-    width: 1000px;
+    width: auto;
     height: 90px;
-    margin: 10px auto;
+    margin: 10px 135px;
     background-color: #16213E;
     border-radius: 10px;
     display: flex;
     align-items: center;
     padding: 0 40px;
+    justify-content: space-between;
 }
 .heading h1{
     font-size: 25px;
     color: #DBE2EF;
 }
-.heading .profile img{
-    width: 55px;
-    height: 55px;
-    border-radius: 15px;
-    object-fit: cover;
-    cursor: pointer;
-}
-.box {
-    width: 200px;
-    background: #16213E;
-    margin-top: 10px;
-    padding: 10px;
-    border-radius: 10px;
-    display: none;
-}
 .menu{
     display: flex;
-    gap: 60px;
-    margin-left: 190px;
-    margin-right: 245px;
+    gap: 80px;
 }
 
 .menu a{
@@ -53,6 +36,50 @@ body{
 
 .menu a:hover{
     color: #cccccc;
+}
+
+.profile img{
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    object-fit: cover;
+    cursor: pointer;
+}
+.box {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    width: 200px;
+    background: #0F172A;
+    border: 2px solid #ccc;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    top: 95px;
+    right: 25px;
+}
+.box .option{
+    text-decoration: none;
+    color: #DBE2EF;
+    width: 175px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+}
+.box a:hover{
+    border-radius: 10px;
+    background-color:#1E293B ;
+}
+.box .option img{
+    width: 20px;
+    height: 20px;
+    /* margin-left: 10px; */
+    margin-right: 4px;
+}
+.box.active{
+    display: block;
 }
 
  

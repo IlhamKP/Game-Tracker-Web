@@ -2,6 +2,10 @@ body{
     background: linear-gradient(to right, #002E5D, #002E5D, #2774ae);
     color: white;   
     font-family: 'Basteleur-Moonlight',sans-serif;
+    
+}
+::-webkit-scrollbar{
+    display: none;
 }
 @font-face {
     font-family: 'Basteleur-Moonlight';
@@ -17,7 +21,6 @@ body{
     display: flex;
     align-items: center;
     padding: 0 40px;
-    /* position: relative; */
     justify-content: space-between;
 }
 .heading h1{
@@ -45,8 +48,6 @@ body{
     border-radius: 20px;
     object-fit: cover;
     cursor: pointer;
-    /* display: flex;po */
-    /* position: relative; */
 }
 
 .library{
@@ -61,8 +62,7 @@ body{
     font-weight: bold;
     font-size: 14px;
     width: 200px;
-    /* height: 10px; */
-    background: #000000;
+    background: #0F172A;
     border: 2px solid #ccc;
     margin-top: 10px;
     padding: 10px;
@@ -74,19 +74,21 @@ body{
 }
 .box .option{
     text-decoration: none;
-    color: #ccc;
+    color: #DBE2EF;
     width: 175px;
     padding: 10px;
-    display: block;
     align-items: center;
+    display: flex;
 }
 .box a:hover{
     border-radius: 10px;
-    background-color: #2c2c2c;
+    background-color:#1E293B ;
 }
-.box img{
+.box .option img{
     width: 20px;
     height: 20px;
+    /* margin-left: 10px; */
+    margin-right: 4px;
 }
 .box.active{
     display: block;
