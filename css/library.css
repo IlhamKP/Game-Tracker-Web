@@ -53,9 +53,10 @@ body{
 .library{
     width: 1000px;
     height: 100%;
-    background-color: black;
+    background-color: #0F172A;
     margin: 75px auto;
     border-radius: 10px;
+    display: flex;
 }
 .box {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -92,4 +93,150 @@ body{
 }
 .box.active{
     display: block;
+}
+.tambah-game{
+    font-family: sans-serif;
+}
+.tambah-game .kotak-tambah-game{
+    width: 200px;
+    height: auto;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+.tambah-game .kotak-tambah-game button{
+    font-family: 'Basteleur-Moonlight',sans-serif;
+    font-size: 18px;
+}
+.tambah-game button{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+.tambah-game .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.tambah-game .popup{
+    background-color:#002E5D;
+    width: 500px;
+    height: auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+.tambah-game .popup h3{
+    display: block;
+    margin: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.tambah-game .popup label{
+    font-family: 'Basteleur-Moonlight',sans-serif;
+}
+.tambah-game .popup .keluar{
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin: -47px 0px 0px 465px;
+}
+.tambah-game .popup .keluar img{
+    width: 20px;
+    height: 20px;
+}
+.tambah-game .overlay label{
+    display:block;
+    margin: 10px 10px;
+}
+.tambah-game .overlay .input-tg{
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+    width: 400px;
+    margin-left: 11px;
+}
+.tambah-game .overlay .btn-simpan{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    margin: 0px 200px;
+}
+.card-game{
+    display: flex;
+    margin: 20px;
+    width: 450px;
+    height: 320px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card-game img{
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.info-game{
+    display: grid;
+    grid-template-columns: 100px auto;
+    gap: 8px 15px;
+    align-content: start;
+    margin-top: 10px;
+}
+
+.info-game h2{
+    grid-column: 1 / 3;
+    margin: 0px 0px 50px 10px;
+}
+
+.info-game label{
+    margin: 0px 0px 0px 10px;
+}
+
+.info-game label::after{
+    content: ":";
+    float: right;
+}
+
+.info-game span{
+    margin: 0;
+}
+.info-game .aw{
+    width: 40px;
+    height: 40px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+.info-game .aw button{
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+
+}
+.info-game .aw img{
+    width: 24px;
+    height: 24px;
+
 }
