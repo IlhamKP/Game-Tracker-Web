@@ -61,14 +61,15 @@ body{
     outline: none;
     color: #16213E;
 }
-.form-sign-in label, p{
+.form-sign-in label{
     margin-left: 12px;
+    width: 145px;
 }
 .icon img{
     width: 24px;
     height: 24px;
 }
-.input-sign-in{
+.form-sign-in .input-sign-in{
     display: flex;
     align-items: center;
     border: 2px solid #ccc;
@@ -78,9 +79,10 @@ body{
     width: 400px;
     margin-left: 11px;
 }
-.input-sign-in:focus-within{
+.form-sign-in .input-sign-in:focus-within{
     border: 2px solid #16213E;
 }
+
 .btn-sign-in{
     font-family: 'Basteleur-Moonlight', sans-serif;
     margin-top: 5px;
@@ -110,4 +112,5 @@ body{
 .already p{
     font-size: 14px;
     margin: 25px 0px 0px 100px;
+    width: 260px;
 }
