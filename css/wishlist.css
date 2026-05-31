@@ -81,3 +81,107 @@ body{
 .box.active{
     display: block;
 }
+
+.cari{
+    width: 500px;
+    height: 40px;
+    background-color: #ebebeb;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    margin: 40px auto;
+}
+.icon{
+    margin-right: 10px;
+    font-size: 16px;
+}
+.cari input{
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 15px;
+}
+
+.cari input::placeholder{
+    color: #cfcfcf;
+}
+
+.tambah-game{
+    font-family: sans-serif;
+}
+.tambah-game .kotak-tambah-game{
+    width: 200px;
+    height: auto;
+    background-color: black;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+}
+.tambah-game .kotak-tambah-game button{
+    font-family: 'Basteleur-Moonlight',sans-serif;
+    font-size: 18px;
+}
+.tambah-game button{
+    border: none;
+    outline: none;
+    background: none;
+    color: white;
+}
+.tambah-game .overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.tambah-game .popup{
+    background-color:#002E5D;
+    width: 500px;
+    height: auto;
+    padding: 15px;
+    border-radius: 10px;
+}
+.tambah-game .popup h3{
+    display: block;
+    margin: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.tambah-game .popup label{
+    font-family: 'Basteleur-Moonlight',sans-serif;
+}
+.tambah-game .overlay label{
+    display:block;
+    margin: 10px 10px;
+}
+.tambah-game .overlay .input-tg{
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+    width: 400px;
+    margin-left: 11px;
+}
+.tambah-game .overlay .btn-simpan{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    margin: 0px 200px;
+
+
+}
+
+
