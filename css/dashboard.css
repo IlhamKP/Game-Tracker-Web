@@ -184,4 +184,46 @@ body{
 
 }
 
+.card-container{
+    background-color: #0d0d0d;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.card{
+    background:#2c2c44; 
+    border-radius:12px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.total{
+    margin-bottom:20px;
+}
+
+.total p{
+    font-size:40px;
+    font-weight:bold;
+}
+
+.bottom-cards{
+    display:flex;
+    gap:20px;
+}
+
+.bottom-cards .card{
+    flex:1;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    font-size:30px;
+    font-weight:bold;
+}
 
