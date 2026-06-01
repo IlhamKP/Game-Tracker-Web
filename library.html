@@ -58,6 +58,13 @@
                     </div>
                     <label>Rating</label>
                     <input type="text" placeholder="1-10" class="input-tg">
+                    <label>Status</label>
+                    <input list="status" placeholder="Progress" class="input-tg">
+                    <datalist id="status">
+                        <option value="Sedang dimainkan">Sedang dimainkan</option>
+                        <option value="Belum dimainkan">Belum dimainkan</option>
+                        <option value="Tamat">Tamat</option>
+                    </datalist>
                     <label>Cover Game</label>
                     <input type="file" class="input-tg" >
                 <br><br>
@@ -66,6 +73,7 @@
         </div>
         </div>
         <div class="library">
+            <div class="card">
             <div class="card-game">
                     <img src="gambar-game/persona-5-royal.png" alt="gambar">
                     <div class="info-game">
@@ -75,13 +83,74 @@
                         <label>Platform</label>
                         <span>Steam</span>
                         <label>Rating</label>
-                        <span>9/10</span>
-                        <div class="aw">
-                            <img src="icon/mdi--heart-outline.png">
+                        <span>-</span>
+                        <label>Status</label>
+                        <span>Belum dimainkan</span>
+                        <div class="letak">
+                            <button><img src="icon/mdi--heart-outline.png"></button>
+                            <button><img src="icon/edit-outline.png"></button>
+                            <button><img src="icon/trash-icon.png"></button>
                         </div>
                     </div>
             </div>
-                
+                <div class="card-game">
+                    <img src="gambar-game/persona-4-golden.png" alt="gambar">
+                    <div class="info-game">
+                        <h2>Persona 4 Golden</h2>
+                        <label>Genre</label>
+                        <span>RPG</span>
+                        <label>Platform</label>
+                        <span>Steam</span>
+                        <label>Rating</label>
+                        <span>10/10</span>
+                        <label>Status</label>
+                        <span>Tamat</span>
+                        <div class="letak">
+                            <button><img src="icon/mdi--heart-outline.png"></button>
+                            <button><img src="icon/edit-outline.png"></button>
+                            <button><img src="icon/trash-icon.png"></button>
+                        </div>
+                   </div>
+                 </div>
+                 <div class="card-game">
+                    <img src="gambar-game/forza-horizon-6.png" alt="gambar">
+                    <div class="info-game">
+                        <h2>Forza Horizon 6</h2>
+                        <label>Genre</label>
+                        <span>Racing</span>
+                        <label>Platform</label>
+                        <span>Xbox</span>
+                        <label>Rating</label>
+                        <span>-</span>
+                        <label>Status</label>
+                        <span>Belum dimainkan</span>
+                        <div class="letak">
+                            <button><img src="icon/mdi--heart-outline.png"></button>
+                            <button><img src="icon/edit-outline.png"></button>
+                            <button><img src="icon/trash-icon.png"></button>
+                        </div>
+                    </div>
+                 </div>
+                 <div class="card-game">
+                    <img src="gambar-game/tomodachi-life-ld.png" alt="gambar">
+                    <div class="info-game">
+                        <h2>Tomodachi Life Living the Dream</h2>
+                        <label>Genre</label>
+                        <span>Simulation</span>
+                        <label>Platform</label>
+                        <span>Nintendo Switch</span>
+                        <label>Rating</label>
+                        <span>-</span>
+                        <label>Status</label>
+                        <span>Belum dimainkan</span>
+                        <div class="letak">
+                            <button><img src="icon/mdi--heart-outline.png"></button>
+                            <button><img src="icon/edit-outline.png"></button>
+                            <button><img src="icon/trash-icon.png"></button>
+                        </div>
+                    </div>
+                 </div>
+            </div>
         </div>
     <script>
         const menu = document.getElementById("box-option");
