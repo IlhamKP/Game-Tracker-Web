@@ -91,7 +91,7 @@ body{
 }
 .btn-login{
     font-family: 'Basteleur-Moonlight', sans-serif;
-    margin-top: 25px;
+    margin-top: 4px;
     background: linear-gradient(#16213E 30%, #123A63 100%);
     outline: none;
     max-width: 474px;
@@ -99,6 +99,90 @@ body{
     height: 47px;  
     border-radius: 10px;
     color: #EAF6F6;
+    cursor: pointer;
+}
+.forgot-password{
+    font-family: 'Basteleur-Moonlight', sans-serif;
+    text-decoration: none;
+    color: #2ec4b6;
+    font-size: 14px;
+    margin-left: 330px;
+    width: 148px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+}
+.forgot-password:hover{
+    color: #123A63;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.popup{
+    background-color:#131B32;
+    width: 500px;
+    height: auto;
+    padding: 15px;
+    border-radius: 10px;
+    color: white;
+}
+.popup h2{
+    display: block;
+    margin: 0px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.popup label{
+    font-family: 'Basteleur-Moonlight',sans-serif;
+}
+.popup .keluar{
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: -58px auto auto 440px;
+}
+
+.popup .keluar img, a{
+    width: 16px;
+    height: 16px;
+    /* margin: auto; */
+}
+.overlay label{
+    display:block;
+    margin: 0px 11px;
+}
+.overlay .input-lp{
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+    width: 400px;
+    margin-left: 11px;
+    background: white;
+}
+.btn-reset{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    width: 200px;
+    height: 30px;
+    margin: 10px auto;
     cursor: pointer;
 }
 .create-account{
@@ -110,7 +194,7 @@ body{
     font-size: 14px;
 }
 .create-account a:hover{
-    color: #193a6b;
+    color: #123A63;
 }
 .create-account p{
     font-size: 14px;
