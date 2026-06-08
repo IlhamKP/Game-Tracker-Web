@@ -22,19 +22,66 @@
         </div>
     </div>
     <div class="wishlist">
-        <div class="cari">
+        <!-- <div class="cari">
         <span class="icon"><img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search logo" width="20px" height="20px"></span>
         <input type="text" placeholder="Cari game...">
-        </div>
+        </div> -->
         <label></label>
     </div>
     <div class="tambah-game">
-        <div id="daftarGame"></div>
+        <!-- <div id="daftarGame"></div> -->
         <div class="kotak-tambah-game">
             <button onclick="bukaTG()">Tambah Game</button>
         </div>
+
+    <!-- DAFTAR WISHLIST -->
+    <div id="daftarGame" class="wishlist-grid">
+
+        <div class="game-card">
+            <img src="gambar-game/persona-4-golden.png" alt="Persona 4 Golden">
+            <h4>Persona 4 Golden</h4>
+        </div>
+
+        <div class="game-card">
+            <img src="gambar-game/persona-5-royal.png" alt="Persona 5 Royal">
+            <h4>Persona 5 Royal</h4>
+        </div>
+
+        <div class="game-card">
+            <img src="gambar-game/persona-4-golden.png" alt="Persona 4 Golden">
+            <h4>Persona 4 Golden</h4>
+        </div>
+
+        <div class="game-card">
+            <img src="gambar-game/persona-5-royal.png" alt="Persona 5 Royal">
+            <h4>Persona 5 Royal</h4>
+        </div>
+
+        <div class="game-card">
+            <img src="gambar-game/persona-4-golden.png" alt="Persona 4 Golden">
+            <h4>Persona 4 Golden</h4>
+        </div>
+
+        <div class="game-card">
+            <img src="gambar-game/persona-5-royal.png" alt="Persona 5 Royal">
+            <h4>Persona 5 Royal</h4>
+        </div>
+
+        <div class="game-card">
+            <img src="gambar-game/persona-4-golden.png" alt="Persona 4 Golden">
+            <h4>Persona 4 Golden</h4>
+        </div>
+
+        <div class="game-card">
+            <img src="gambar-game/persona-5-royal.png" alt="Persona 5 Royal">
+            <h4>Persona 5 Royal</h4>
+        </div>
+
+    </div>
+
         <div class="overlay" id="overlay">
             <div class="popup">
+                <button class="btn-close" onclick="tutupTG()">&times;</button>
                 <h3>Tambah Game</h3>
                 <div>
                     <label>Judul Game</label>
@@ -94,33 +141,60 @@
     }
 
     function simpanGame() {
-
         const judul = document.getElementById("judulGame").value;
-        const genre = document.getElementById("genreGame").value;
-        const rating = document.getElementById("ratingGame").value;
 
-        if (judul === "") {
+        if(judul === ""){
             alert("Masukkan judul game!");
             return;
         }
 
         const card = document.createElement("div");
+        card.className = "game-card";
 
         card.innerHTML = `
-            <h3>${judul}</h3>
-            <p>Genre : ${genre}</p>
-            <p>Rating : ${rating}</p>
+            <img src="https://via.placeholder.com/300x400" alt="Cover">
+            <h4>${judul}</h4>
         `;
-
-        card.style.background = "white";
-        card.style.padding = "15px";
-        card.style.margin = "10px";
-        card.style.borderRadius = "10px";
 
         document.getElementById("daftarGame").appendChild(card);
 
         tutupTG();
     }
+
+    //     const judul = document.getElementById("judulGame").value;
+    //     const genre = document.getElementById("genreGame").value;
+    //     const rating = document.getElementById("ratingGame").value;
+
+    //     if (judul === "") {
+    //         alert("Masukkan judul game!");
+    //         return;
+    //     }
+
+    //     const card = document.createElement("div");
+
+    //     card.innerHTML = `
+    //         <h3>${judul}</h3>
+    //         <p>Genre : ${genre}</p>
+    //         <p>Rating : ${rating}</p>
+    //     `;
+
+    //     card.style.background = "white";
+    //     card.style.padding = "15px";
+    //     card.style.margin = "10px";
+    //     card.style.borderRadius = "10px";
+
+    //     document.getElementById("daftarGame").appendChild(card);
+
+    //     tutupTG();
+    // }
+
+    const overlay = document.getElementById("overlay");
+
+overlay.addEventListener("click", function(e){
+    if(e.target === overlay){
+        tutupTG();
+    }
+});
 </script>
 </body>
 </html>
