@@ -136,6 +136,7 @@ body{
     padding: 15px;
     border-radius: 10px;
     color: white;
+    /* border: px solid #ccc; */
 }
 .popup h2{
     display: block;
