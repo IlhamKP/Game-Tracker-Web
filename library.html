@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Game Tracker</title>
-    <link rel="stylesheet" href= "css/librarycoba.css">
+    <link rel="stylesheet" href= "css/library.css">
 </head>
 <body>
     <div class="header">
@@ -24,30 +24,39 @@
         <button onclick="bukaTG()">Tambah Game</button>
         <div class="overlay" id="overlay">
             <div class="popup">
-                <h3>Tambah Game</h3>
-                <a href="#" onclick="tutupTG()"><img src="icon/cross-icon.png"></a>
+                <form action="tambah-game.php" method="POST">
+                    <div class="header-popup">
+                        <h3>Tambah Game</h3>
+                        <a href="#" onclick="tutupTG()"><img src="icon/cross-icon.png"></a>
+                    </div>
+                <div class="popup-isi">
+                <label>Cover Game</label>
+                <div class="preview">
+                    <input type="file" class="tombol-file" id="coverFile" name="cover" accept="image/*">
+                    <img id="preview" src="" alt="Preview Cover">
+                </div>
                 <label>Judul Game</label>
-                <input type="text" placeholder="Judul Game" class="input-tg">
+                <input type="text" placeholder="Judul Game" class="input-tg" name="judul">
                 <label>Genre Game</label>
-                <input type="text" placeholder="Genre Game" class="input-tg">
+                <input type="text" placeholder="Genre Game" class="input-tg" name="genre">
                 <label>Platform</label>
-                <div class="platform">
-                    <span><input type="radio" name="pl">Steam</span>
-                    <span><input type="radio" name="pl">Xbox</span>
-                    <span><input type="radio" name="pl">Playstation</span>
-                    <span><input type="radio" name="pl">Nintendo Switch</span>
-                </div>
-                <label>Status</label>
-                <div class="platform">
-                    <span><input type="radio" name="st">Belum dimainkan</span>
-                    <span><input type="radio" name="st">Sedang dimainkan</span>
-                    <span><input type="radio" name="st">Tamat</span>
-                </div>
+                <select class="platform">
+                        <option>Steam</option>
+                        <option>Xbox</option>
+                        <option>PlayStation</option>
+                        <option>Nintendo Switch</option>
+                    </select>
+                    <label>Status</label>
+                    <select class="platform">
+                        <option>Belum dimainkan</option>
+                        <option>Sedang dimainkan</option>
+                        <option>Tamat</option>
+                </select>
                 <label>Rating</label>
                 <input type="number" placeholder="1-10" class="input-tg">
-                <label>Cover Game</label>
-                <input type="file" class="input-tg">
                 <button type="submit" onclick="tutupTG()" class="btn-simpan">Simpan</button>
+                </form>
+                </div>
             </div>
         </div>
     </div>
@@ -110,16 +119,19 @@
                         </div>
             </div>
         </div>
-        <div class="card-game">
+        <!-- <div class="card-game">
             <label>Persona 5 Royal</label>
         </div>
         <div class="card-game">
     
-        </div>
+        </div> -->
     </div>
     <script>
         const menu = document.getElementById("box-option");
         const button = document.querySelector(".profile");
+        const coverFile = document.getElementById("coverFile");
+        const preview = document.getElementById("preview");
+
         function profile(){
             menu.classList.toggle("active");
             }
@@ -131,10 +143,21 @@
 
         function bukaTG() {
             document.getElementById("overlay").style.display = "flex";
+            document.body.style.overflow = "hidden";
         }
         function tutupTG(){
             document.getElementById("overlay").style.display = "none";
+            document.body.style.overflow = "auto";
         }
+
+        coverFile.addEventListener("change", function() {
+        const file = this.files[0];
+
+        if (file) {
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
+        }
+    });
     </script>
 </body>
 </html>

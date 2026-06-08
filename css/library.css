@@ -124,21 +124,27 @@ body{
     align-items: center;
 }
 .popup{
-    background-color : #131B32;
-    width: 500px;
-    height: auto;
-    padding: 15px;
+    background: #131B32;
     border-radius: 10px;
-    color: white;
+    overflow-y: auto ;
     border: 2px solid #ccc;
 }
-.popup h3{
-    display: block;
-    margin: 0px;
-    margin-bottom: 20px;
-    text-align: center;
+.header-popup{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #131B32;
+    color: white;
+    padding :8px;
+    border-radius: 10px;
+
 }
-.popup a{
+.header-popup h3{
+    margin: 0;
+    margin-left: 148px;
+
+}
+.header-popup a{
     width: 32px;
     height: 32px;
     border: 2px solid #ccc;
@@ -146,39 +152,77 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: -44px auto 10px 464px;
+    text-decoration: none;
 }
-.popup img{
+
+.header-popup img{
     width: 16px;
     height: 16px;
 }
 
-.popup label{
-    display:block;
-    margin: 8px 12px;
+.popup-isi{
+    padding: 0px 20px 12px 20px;
+    color: white;
+    height: 500px;
+    overflow-y: auto ;
 }
-.popup .input-tg{
+
+.popup-isi label{
+    display:block;
+    margin: 8px 0px;
+}
+.popup-isi .input-tg{
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 8px 12px;
+    gap: 4px;
+    width: 400px;
+}
+
+.popup-isi .platform{
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 8px;
+    width: 428px;
+    /* margin-left: 12px; */
+}
+
+.tombol-file::file-selector-button{
+    background: #2E6FA3;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 12px;
+}
+
+.tombol-file::file-selector-button:hover{
+    background: #1f5a89;
+}
+
+.preview{
     display: flex;
     align-items: center;
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 8px;
-    gap: 4px;
-    width: 400px;
-    margin-left: 12px;
+    /* gap: 4px; */
+    /* width: 400px; */
 }
-.popup .platform{
-    display: grid;
-    grid-template-columns: auto auto;
-    align-items: center;
-    border: 2px solid #ccc;
+.preview img{
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
     border-radius: 10px;
-    padding: 8px;
-    gap: 12px 0px;
-    width: 400px;
-    margin-left: 12px;
+    border: 2px solid #ccc;
+    display: none;
+    margin-left: 32px;
 }
-.popup .btn-simpan{
+
+.popup-isi .btn-simpan{
     border: 2px solid #ccc;
     border-radius: 10px;
     width: 100px;
@@ -186,6 +230,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    /* padding: 20px; */
 }
 .cari-game{
     width: 486px;
@@ -228,8 +273,6 @@ body{
     margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    /* justify-items: center;
-    align-items: center; */
     padding: 20px;
     gap: 12px 12px;
 }
