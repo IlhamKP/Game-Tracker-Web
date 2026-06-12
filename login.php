@@ -11,13 +11,15 @@ $query = mysqli_query($conn,
 if (mysqli_num_rows($query) > 0){
     $user = mysqli_fetch_assoc($query);
 
-    $_SESSION['id'] = $user['id'];
+    $_SESSION['id_users'] = $user['id_users'];
     $_SESSION['username'] = $user['username'];
     header("location: dashboard.html");
 } else {
-    echo "alert('Login gagal!');";
+    echo '<script>alert("Gagal");</script>';
     header("location: index.html");
 }
+
+    
 
 
 ?>
