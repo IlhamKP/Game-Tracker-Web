@@ -9,14 +9,6 @@
 <body>
     <!-- <div class="container"> -->
         <div class="kotak">
-        <!-- https://dribbble.com/shots/19911496-Log-in-page 
-        Design Login Form 1-->
-        <!-- https://fontawesome.com/sessions/sign-in?next=%2Faccount%2Fgeneral? 
-        Design Login Form 2-->
-        <!-- https://dribbble.com/shots/24671160-Fillianta-Sign-Up
-         Design Login Form 3 -->
-        <!-- https://icon-sets.iconify.design/?query=lock
-        Icon Design -->
         <div class="form-login">
             <h1>Sign In to Your Account</h1>
             <form action="login.php" method="POST">
@@ -24,11 +16,21 @@
                 <label class="input-login">
                     <span class="icon" for="username"><img src="./icon/proicons--person.png" alt="un"></span>
                     <input type="text" placeholder="Username" id="username" name="username">
+                    <?php
+                    if(isset($_GET['error']) && $_GET['error'] == 'username'){
+                        echo "<p>Username tidak ditemukan</p>";
+                    }
+                    ?>
                 </label>
                 <label>Password</label>
                 <label class="input-login">
                     <span class="icon"><img src="./icon/si--lock-line.png" alt="pw"></span>
                     <input type="password" placeholder="Password" id="password" name="password">
+                    <?php
+                    if(isset($_GET['error']) && $_GET['error'] == 'password'){
+                        echo "<p>Password Salah</p>";
+                    }
+                    ?>
                 </label>
                 <a href="#" class="forgot-password" onclick="bukalp()">Forgot Password?</a>
                 <button type="submit" class="btn-login">Sign In</button>

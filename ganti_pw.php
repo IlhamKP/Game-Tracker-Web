@@ -9,10 +9,10 @@ $cek = mysqli_query($conn,"SELECT * FROM users WHERE username = '$username' AND 
 if(mysqli_num_rows($cek) > 0){
     mysqli_query($conn,"UPDATE users SET password='$password_baru' WHERE username='$username' AND email='$email'");
     echo "Password berhasil diubah";
-    header("location: index.html");
+    header("location: index.php");
 }else{
     echo "Username atau email tidak ditemukan";
-    header("location: index.html");
+    header("location: index.php");
 }
 
 ?>

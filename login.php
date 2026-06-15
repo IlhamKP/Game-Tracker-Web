@@ -4,22 +4,21 @@ session_start();
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$query = mysqli_query($conn,
-    "SELECT * FROM users WHERE username='$username' AND password='$password'"    
-);
+$query = mysqli_query($conn,"SELECT * FROM users WHERE username='$username'");
 
 if (mysqli_num_rows($query) > 0){
     $user = mysqli_fetch_assoc($query);
 
-    $_SESSION['id_users'] = $user['id_users'];
-    $_SESSION['username'] = $user['username'];
-    header("location: dashboard.html");
+        if($password == $user['password']){
+        $_SESSION['id_users'] = $user['id_users'];
+        // echo "Login berhasil";
+        header("location: dashboard.html");
+        } else {
+        header("Location: index.php?error=password");
+        }
+
 } else {
-    echo '<script>alert("Gagal");</script>';
-    header("location: index.html");
+    header("Location: index.php?error=username");
 }
-
-    
-
 
 ?>
