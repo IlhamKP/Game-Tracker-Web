@@ -10,9 +10,7 @@ body{
 @font-face {
     font-family: 'Basteleur-Moonlight';
     src: url('../webfonts/Basteleur-Moonlight.woff2') format('woff2');
-
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
 
 .header{
     width: auto;
@@ -142,7 +140,7 @@ body{
     font-family: 'basteleur-moonlight',sans-serif;
 }
 
-.overlay{
+.overlay,.overlay-edit{
     position: fixed;
     top: 0;
     left: 0;
@@ -154,13 +152,14 @@ body{
     justify-content: center;
     align-items: center;
 }
-.popup{
+.popup,.popup-edit{
     background: #131B32;
     border-radius: 10px;
     overflow-y: auto ;
     border: 2px solid #ccc;
+
 }
-.header-popup{
+.header-popup,.header-edit{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -202,7 +201,7 @@ body{
     display:block;
     margin: 8px 0px;
 }
-.popup-isi .input-tg{
+.popup-isi .input-tg, .popup-edit .input-ed{
     display: flex;
     align-items: center;
     border: 2px solid #ccc;
@@ -212,7 +211,7 @@ body{
     width: 400px;
 }
 
-.popup-isi .platform{
+.popup-isi .list, .popup-edit .list-edit{
     border: 2px solid #ccc;
     border-radius: 10px;
     padding: 8px;
@@ -253,7 +252,7 @@ body{
     margin-left: 32px;
 }
 
-.popup-isi .btn-simpan{
+.popup-isi .btn-simpan,.popup-edit .btn-simpan{
     border: 2px solid #ccc;
     border-radius: 10px;
     width: 100px;
@@ -261,7 +260,17 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    /* padding: 20px; */
+    background-color: #131B32;
+    color: white;
+    font-family: 'basteleur-moonlight', sans-serif;
+    font-size :16px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.popup-isi .btn-simpan:hover,.popup-edit .btn-simpan:hover{
+    /* background-color: #0F172A; */
+    opacity: 80%;
 }
 
 .icon{
@@ -283,7 +292,23 @@ body{
     border: none;
     outline: none;
     font-size: 16px;
-    margin-left: 10px;;
+    margin-left: 10px;
+}
+
+.cari-game{
+    border:2px solid transparent;
+}
+
+.cari-game:focus-within{
+    border: 2px solid black;
+}
+
+.hide{
+    display:none !important;
+}
+
+.game-item {
+    transition: 0.2s ease;
 }
 
 .library{
@@ -358,6 +383,9 @@ body{
     border-radius: 10px;
     border: 2px solid #ccc;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    display: flex;
 }
 .tombol button:hover{
     background-color: white;
@@ -368,6 +396,10 @@ body{
 .tWishlist:hover{
     color: #ff4d6d;
 }
+
+.tWishlist.active{
+    color: #ff4d6d;
+}
 .tEdit:hover{
     color:blue;
 }
@@ -375,3 +407,52 @@ body{
     color: red;
 }
 
+.header-edit h3{
+    margin: 0;
+    margin-left: 168px;
+}
+
+.header-edit a{
+    width: 32px;
+    height: 32px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+}
+
+.header-edit img{
+    width: 16px;
+    height: 16px;
+}
+
+.isi-edit{
+    padding: 0px 20px 12px 20px;
+    color: white;
+    /* height: 500px; */
+    /* overflow-y: auto ; */
+}
+
+.isi-edit label{
+    display:block;
+    margin: 8px 0px;
+}
+
+.previewEdit{
+    display: flex;
+    align-items: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 8px;
+}
+.previewEdit img{
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    display: none;
+    margin-left: 32px;
+}

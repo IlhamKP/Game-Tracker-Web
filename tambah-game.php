@@ -16,7 +16,9 @@ move_uploaded_file($tmp, "gambar-game/" . $cover);
 
 $query = "INSERT INTO library (id_users,cover_game,judul,genre,platform,status,rating) VALUES
           ('$id','$cover','$judul','$genre','$platform','$status','$rating')";
+
 $id_library = $_SESSION['id_library'];
+
     if(mysqli_query($conn, $query)){
     header("Location: library.php");
     exit;

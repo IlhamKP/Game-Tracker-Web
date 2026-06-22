@@ -37,6 +37,7 @@
             <a href="index.php" class="option"><img src="icon/logout-profile.png">Sign Out</a>
         </div>
     </div>
+
     <div class="tombol-dan-cari">
     <div class="tambah-game">
         <button onclick="bukaTG()">Tambah Game</button>
@@ -45,27 +46,27 @@
                 <form action="tambah-game.php" method="POST" enctype="multipart/form-data">
                     <div class="header-popup">
                         <h3>Tambah Game</h3>
-                        <a href="#" onclick="tutupTG()"><img src="icon/cross-icon.png"></a>
+                        <a onclick="tutupTG()"><img src="icon/cross-icon.png"></a>
                     </div>
                     <div class="popup-isi">
                         <label>Cover Game</label>
                         <div class="preview">
-                            <input type="file" class="tombol-file" id="coverFile" name="cover_tg" accept="image/*">
-                            <img id="preview" src="" alt="Preview Cover">
+                            <input type="file" class="tombol-file" id="coverFileTambah" name="cover_tg" accept="image/*">
+                            <img id="previewTambah" src="" alt="Preview Cover">
                         </div>
                         <label>Judul Game</label>
                         <input type="text" placeholder="Judul Game" class="input-tg" name="judul_tg">
                         <label>Genre Game</label>
                         <input type="text" placeholder="Genre Game" class="input-tg" name="genre_tg">
                         <label>Platform</label>
-                        <select class="platform" name="pl_tg">
+                        <select class="list" name="pl_tg">
                             <option>Steam</option>
                             <option>Xbox</option>
                             <option>PlayStation</option>
                             <option>Nintendo Switch</option>
                         </select>
                         <label>Status</label>
-                        <select class="platform" name="st_tg">
+                        <select class="list" name="st_tg">
                             <option>Belum dimainkan</option>
                             <option>Sedang dimainkan</option>
                             <option>Tamat</option>
@@ -80,7 +81,7 @@
     </div>
     <div class="cari-game">
         <span class="icon"><img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search logo"></span>
-        <input type="text" placeholder="Cari game...">
+        <input type="text" id="cari" placeholder="Cari game...">
     </div>
     </div>
     
@@ -90,7 +91,7 @@
            
            <?php while ($row = mysqli_fetch_assoc($result)) {?>
    
-                <div class="card-game">
+                <div class="card-game game-item">
                     <img src="gambar-game/<?php echo $row['cover_game']; ?>">
                     <div class="info-game">
                         <h3><?php echo $row['judul']; ?></h3>
@@ -116,13 +117,14 @@
                         </div>
                         <div class="tombol">
                             <button class="tWishlist">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"  viewBox="0 0 24 24">
 	                        <path d="M0 0h24v24H0z" fill="none" />
-	                        <path fill="currentColor" d="M12.001 4.529a6 6 0 0 1 8.242.228a6 6 0 0 1 .236 8.236l-8.48 8.492l-8.478-8.492a6 6 0 0 1 8.48-8.464m6.826 1.641a4 4 0 0 0-5.49-.153l-1.335 1.198l-1.336-1.197a4 4 0 0 0-5.686 5.605L12 18.654l7.02-7.03a4 4 0 0 0-.193-5.454" />
+	                        <path fill="currentColor" d="m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z" />
                             </svg>
+
                             </button>
                             
-                            <button class="tEdit">
+                           <button class="tEdit" onclick="bukaEdit('<?php echo $row['id_library']; ?>','<?php echo $row['judul']; ?>','<?php echo $row['genre']; ?>','<?php echo $row['platform']; ?>','<?php echo $row['status']; ?>','<?php echo $row['rating']; ?>','<?php echo $row['cover_game']; ?>')">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
 	                        <path d="M0 0h24v24H0z" fill="none" />
 	                        <path fill="currentColor" d="m14.06 9l.94.94L5.92 19H5v-.92zm3.6-6c-.25 0-.51.1-.7.29l-1.83 1.83l3.75 3.75l1.83-1.83c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.2-.2-.45-.29-.71-.29m-3.6 3.19L3 17.25V21h3.75L17.81 9.94z" />
@@ -139,19 +141,58 @@
                         </div>
                     </div>
                 </div>
+                
                 <?php
                 }
                 ?>
-    </div>
-        <?php
+                
+                <?php
         }
         ?>
+        <div class="overlay-edit" id="overlay-edit">
+            <form action="edit-game.php" method="POST" enctype="multipart/form-data">
+                <div class="popup-edit">
+                    <div class="header-edit">
+                        <h3>Edit Game</h3>
+                    <a onclick="tutupEdit()"><img src="icon/cross-icon.png"></a>
+                </div>
+                <div class="isi-edit">
+                    <label>Cover Game</label>
+                    <div class="previewEdit">
+                    <input type="file" class="tombol-file" id="coverFileEdit" name="cover_game" accept="image/*">
+                    <img id="previewEdit" src="gambar-game/<?php echo  $row['cover_game']?>" alt="Preview Cover">
+                    </div>
+                    <label>Judul Game</label>
+                    <input type="hidden" id="edit_id" name="id_library">
+                    <input type="text" id="edit_judul" name="judul" class="input-ed" placeholder="Judul Game">
+                    <label>Genre Game</label>
+                    <input type="text" id="edit_genre" name="genre" class="input-ed" placeholder="Genre Game">
+                    <label>Platform</label>
+                    <select id="edit_platform" name="platform" class="list-edit" placeholder="Platform">
+                        <option>Steam</option>
+                        <option>Xbox</option>
+                        <option>Nintendo Switch</option>
+                        <option>Playstation</option>
+                    </select>
+                    <label>Status</label>
+                    <select id="edit_status" name="status" class="list-edit" placeholder="Status">
+                        <option>Belum dimainkan</option>
+                        <option>Sedang dimainkan</option>
+                        <option>Tamat</option>
+                    </select>
+                    <label>Rating</label>
+                    <input type="number" id="edit_rating" name="rating" class="input-ed" placeholder="1-10">
+                    <button type="submit" class="btn-simpan">Simpan</button>
+                </div>
+                </div>
+                </div>
+            </form>
+            </div>
+</body>
     <script>
         const menu = document.getElementById("box-option");
         const button = document.querySelector(".profile");
-        const coverFile = document.getElementById("coverFile");
-        const preview = document.getElementById("preview");
-
+        
         function profile() {
             menu.classList.toggle("active");
         }
@@ -170,15 +211,64 @@
             document.body.style.overflow = "auto";
         }
 
-        coverFile.addEventListener("change", function () {
-            const file = this.files[0];
+function bukaEdit(id, judul, genre, platform, status, rating, cover) {
+    document.getElementById("edit_id").value = id;
+    document.getElementById("edit_judul").value = judul;
+    document.getElementById("edit_genre").value = genre;
+    document.getElementById("edit_platform").value = platform;
+    document.getElementById("edit_status").value = status;
+    document.getElementById("edit_rating").value = rating;
 
-            if (file) {
-                preview.src = URL.createObjectURL(file);
-                preview.style.display = "block";
-            }
-        });
+    document.getElementById("previewEdit").src =
+        "gambar-game/" + cover;
+
+    document.getElementById("overlay-edit").style.display = "flex";
+}
+
+function tutupEdit() {
+    document.getElementById("overlay-edit").style.display = "none";
+    document.body.style.overflow = "auto";
+
+    
+}
+
+const inputTambah = document.getElementById("coverFileTambah");
+const previewTambah = document.getElementById("previewTambah");
+
+if (inputTambah) {
+    inputTambah.addEventListener("change", function () {
+        const file = this.files[0];
+
+        if (file) {
+            previewTambah.src = URL.createObjectURL(file);
+            previewTambah.style.display = "block";
+        }
+    });
+}
+
+document.querySelectorAll('.tWishlist').forEach(item => {
+    item.addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+});
+
+document.getElementById("cari").addEventListener("keyup", function () {
+
+    let keyword = this.value.toLowerCase();
+    let games = document.querySelectorAll(".game-item");
+
+    games.forEach(game => {
+
+        let title = game.querySelector("h3").textContent.toLowerCase();
+
+        if (title.includes(keyword)) {
+            game.classList.remove("hide");
+        } else {
+            game.classList.add("hide");
+        }
+    });
+
+});
     </script>
-</body>
 
 </html>
