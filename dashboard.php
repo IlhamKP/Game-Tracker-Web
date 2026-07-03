@@ -1,113 +1,113 @@
-<link href="css/dashboard.css" rel="stylesheet">
 <!DOCTYPE html>
 <html lang="id">
 <head>
+    <link href="css/dashboard.css" rel="stylesheet">
     <title>Game Tracker</title>
-    <img src="">
 </head>
-    <?php
-    include 'koneksi.php';
-    session_start();
-    
-    if(!isset($_SESSION['id_users'])){
-    header("Location: index.php");
-    exit;
-    }
-    $id_users = $_SESSION['id_users'];
-    $query = mysqli_query($conn,"SELECT foto_profile FROM users WHERE id_users = '$id_users'");
-    $profile = mysqli_fetch_assoc($query);
-    $qusername = mysqli_query($conn, "SELECT username FROM users WHERE id_users = '$id_users'");
-    $username = mysqli_fetch_assoc($qusername);
-    $result = mysqli_query($conn, "SELECT * FROM library WHERE id_users = '$id_users'");
-        ?>
 <body>
-    <div class="header">
-        <h1>Game<br>Tracker</h1>
+    <div class="heading">
+        <h1>Game <br>Tracker</h1>
         <div class="menu">
-            <a href="dashboard.php">Dashboard</a>
-            <a href="library.php">Library</a>
-            <a href="wishlist.php">Wishlist</a>
+                <a href="dashboard.html">Dashboard</a> 
+                <a href="library.php">Library</a>
+                <a href="wishlist.html">Wishlist</a>
         </div>
-    
-        <label class="profile"><span><?php echo $username['username'];?></span><img src="foto_profile/<?php echo $profile['foto_profile'];?>" alt="profile" onclick="profile()"></label>
+        <div class="profile">
+            <a onclick="profile(); return false;"><img src="https://i.pinimg.com/736x/fc/7c/3b/fc7c3b11ed402d81ab8918b9a1304113.jpg" alt="logo"></a>     
+        </div>
         <div class="box" id="box-option">
             <a href="#" class="option"><img src="icon/person-profile.png">Profile</a>
-            <a href="index.php" class="option"><img src="icon/logout-profile.png">Sign Out</a>
-        </div>
-    </div>
-    <div class="dashboard">
-        <div class="statistik">
-            <div class="jumlah">
-                <h3>Total Game</h3>
-                <span>3</span>
-            </div>
-            <div class="jumlah">
-                <h3>Belum dimainkan</h3>
-                <span>2</span>
-            </div>
-            <div class="jumlah">
-                <h3>Tamat</h3>
-                <span>2</span>
-            </div>
-            <div class="jumlah">
-                <h3>Sedang dimainkan</h3>
-                <span>2</span>
-            </div>
-        </div>
-        
-        <div class="list-game">
-            <label>New Release</label>
-            <div class="list">
-                <div class="game">
-                    <img src="./gambar-game/forza-horizon-6.png">
-            </div>
-            <div class="game">
-                <img src="./gambar-game/forza-horizon-6.png">
-            </div>
-            <div class="game">
-                <img src="./gambar-game/forza-horizon-6.png">
-            </div>
-            <div class="game">
-                <img src="./gambar-game/forza-horizon-6.png">
-            </div>
-            <div class="game">
-                <img src="./gambar-game/forza-horizon-6.png">
-            </div>
-            <div class="game">
-                <img src="./gambar-game/forza-horizon-6.png">
-            </div>
-            </div>
-        </div>
-awdawdw
-adadawd
-awdawdawd
-adawdaw
-dawdawdawd
-awdawdaw
-dawdawd
-awdawdaw
+            <a href="index.html" class="option"><img src="icon/logout-profile.png">Sign Out</a>
+        </div> 
 
     </div>
+    <div class="dashboard">
+        <div class="cari">
+        <span class="icon"><img src="https://cdn-icons-png.flaticon.com/128/54/54481.png" alt="search logo" width="20px" height="20px"></span>
+        <input type="text" placeholder="Cari game...">
+        </div>
+        <button type="button" onclick="window.location.href='login.html'" title="Tombol Sementara">Log Out</button>
+    <div class="tambah-game">
+        <div class="kotak-tambah-game">
+            <button onclick="bukaTG()">Tambah Game</button>
+        </div>
+        <div class="overlay" id="overlay">
+            <div class="popup">
+                <h3>Tambah Game</h3>
+                <div>
+                    <label>Judul Game</label>
+                    <input type="text" placeholder="Judul Game" class="input-tg">
+                </div>
+                    <label>Genre</label>
+                    <input list="genre" placeholder="Genre" class="input-tg">
+                    <datalist id="genre">
+                        <option value="Action">Action</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="RPG">RPG</option>
+                        <option value="FPS">FPS</option>
+                        <option value="Strategy">Strategy</option>
+                        <option value="Simulation">Simulation</option>
+                        <option value="Horror">Horror</option>
+                        <option value="Racing">Racing</option>
+                        <option value="Sports">Sports</option>
+                        <option value="Puzzle">Puzzle</option>
+                    </datalist>
+                    <label>Platform</label>
+                    <div class="input-tg">
+                        Steam<input type="checkbox" value="Steam">
+                        Xbox<input type="checkbox" value="Xbox">
+                        Playstation<input type="checkbox" value="Playstation">
+                        Nintendo Switch<input type="checkbox" value="Nintendo Switch">
+                    </div>
+                    <label>Rating</label>
+                    <input type="text" placeholder="1-10" class="input-tg">
+                    <label>Cover Game</label>
+                    <input type="file" class="input-tg" >
+                <br><br>
+                <button onclick="tutupTG()" class="btn-simpan">Simpan</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-container">
+
+    <div class="card total">
+        <h2>Total Game</h2>
+        <p>0</p>
+    </div>
+
+    <div class="bottom-cards">
+
+        <div class="card">
+            <h3>Belum Dimainkan</h3>
+            <p>0</p>
+        </div>
+
+        <div class="card">
+            <h3>Sedang Dimainkan</h3>
+            <p>0</p>
+        </div>
+
+        <div class="card">
+            <h3>Tamat</h3>
+            <p>0</p>
+        </div>
+
+    </div>
+    </div>
+    </div>
     <script>
-        function bukaTG() {
-            document.getElementById("overlay").style.display = "flex";
-        }
-        function tutupTG(){
-            document.getElementById("overlay").style.display = "none";
-        }
-        function profile(){
-            document.getElementById("box").classList.toggle("active");
-        }
-        const menu = document.getElementById("box-option");
-        const button = document.querySelector(".profile");
-        function profile(){
-            menu.classList.toggle("active");
-            }
-        document.addEventListener("click", function(event){
-        if(!menu.contains(event.target) &&!button.contains(event.target)){
+const menu = document.getElementById("box-option");
+const button = document.querySelector(".profile");
+
+function profile(){
+    menu.classList.toggle("active");
+}
+
+document.addEventListener("click", function(event){
+    if(!menu.contains(event.target) && !button.contains(event.target)){
         menu.classList.remove("active");
-        }
-        });
-    </script>
+    }
+});
+</script>
 </body>
 </html>
